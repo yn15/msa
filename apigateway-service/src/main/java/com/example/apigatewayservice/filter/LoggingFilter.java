@@ -58,7 +58,7 @@ public class LoggingFilter extends AbstractGatewayFilterFactory<LoggingFilter.Co
                 }
 
             }));
-        }, Ordered.LOWEST_PRECEDENCE);
+        }, Ordered.HIGHEST_PRECEDENCE);
 
         return filter;
     }
