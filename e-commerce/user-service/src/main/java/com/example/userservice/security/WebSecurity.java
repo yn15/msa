@@ -23,6 +23,9 @@ public class WebSecurity {
         ).headers((headersConfig) -> headersConfig.frameOptions(frameOptionsConfig -> frameOptionsConfig.disable()))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/users/**").permitAll()
+                        .requestMatchers("/welcome").permitAll()
+                        .requestMatchers("/health_check").permitAll()
+                        .requestMatchers(WHITE_LIST).permitAll()
                         .requestMatchers(PathRequest.toH2Console()).permitAll()
                 );
 
