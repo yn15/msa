@@ -38,4 +38,4 @@ logging:
 
 token:
   expiration_time: 86400000
-  secret: Y29tcGxleHN0cmluZzBzb21lVGhpbmd2YWx1ZXRvZWxvbmdzZXJpb3V0Y2hlY2tpbmc=
+  secret: dXNlcl90b2tlbnVzZXJfdG9rZW51c2VyX3Rva2VudXNlcl90b2tlbnVzZXJfdG9rZW51c2VyX3Rva2VudXNlcl90b2tlbnVzZXJfdG9rZW4=
