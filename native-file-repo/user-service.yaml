@@ -13,3 +13,6 @@ spring:
     password: '{cipher}AYAus8m1ibtqf5JLp2ETZehQJZBKDkxBSeZZ3QVXwra56ySeaueax2hY3GzV6nXvPsxjzLtEkndQEvhwGGR5z9blHAhUT419OUSfs3NqY93cO3+z+XFnsrZSYwbBX5tO0rovrBOBFR97bbgt80PCil62VDhtd2NE6Y8oAhPWDDF5I4EHg3Z1y4FLMGGPlPASkJCG9jmqKud2AqqpaT0pcJnf08cDFhtB9v5eF+gOGyrMKKn5pD6pd9ahCKaFUwtI7LnPC4UE0tSs3mh/6/2ib7QmVnVkgvavg1w5/U9LreWg2qXj4+/rLOsbnWR2JgowukWrdxGyW7ch42DtpN2c8ZVdGw4xFSKXz3/i1XIs6tC0DwaDEekN6576cfetcUmqYYh6ChkFNaK8gFa+JVYegujM0APxkPgu/k6U/GwzApgItxBuOFWZZM/lDx4JjaIeuxW7gUDaLfZbdnsFvuOmLSNewEWmDu70lpP3BYsDSKRZy1pbH2ams5uWF5Km83BuufBb4e1Zd47t2MU6O9K1ttsyxV2mi8wbZns5qfL2NH5bzA=='
     generate-unique-name: false
     name: testdb
+
+order_service:
+  url: http://ORDER-SERVICE/order-service/%s/orders
