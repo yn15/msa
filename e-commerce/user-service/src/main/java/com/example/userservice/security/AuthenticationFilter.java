@@ -21,9 +21,11 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 import java.io.IOException;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Date;
 
 @Slf4j
@@ -65,13 +67,8 @@ public class AuthenticationFilter  extends UsernamePasswordAuthenticationFilter 
         Instant now = Instant.now();
 
 
-        // 비밀 키를 가져오고, SecretKey로 변환
-        String secret = env.getProperty("token.secret");
-
-// 비밀 키를 바이트 배열로 변환
-        byte[] decodedKey = secret.getBytes(); // 또는 Base64.decode(secret)로 Base64로 인코딩된 경우
-
-        SecretKey key = Keys.hmacShaKeyFor(decodedKey);
+        byte[] secretKeyBytes = Base64.getEncoder().encode(env.getProperty("token.secret").getBytes());
+        SecretKey key = new SecretKeySpec(secretKeyBytes, SignatureAlgorithm.HS512.getJcaName());
 
         String token = Jwts.builder()
                 .setSubject(userDetails.getUserId())
