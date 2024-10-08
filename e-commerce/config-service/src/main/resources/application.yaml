@@ -3,9 +3,13 @@ server:
 spring:
   application:
     name: config-server
+  profiles:
+    active: native
   cloud:
     config:
       server:
+        native:
+          search-locations: C:\Users\DIR-N-0153\Desktop\OJT\msa\native-file-repo
         git:
 #          uri: C:\Users\DIR-N-0153\Desktop\OJT\msa\git-local-repo
           uri: https://github.com/yn15/spring-cloud-repo.git
