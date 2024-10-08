@@ -1,0 +1,6 @@
+token:
+  expiration_time: 864000000
+  secret: changed#3 native user_token_application user_token_application user_token_application user_token_application user_token_application user_token_application user_token_application user_token_application
+
+gateway:
+  ip: 192.168.2.19

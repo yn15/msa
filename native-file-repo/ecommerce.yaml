@@ -1,0 +1,6 @@
+token:
+  expiration_time: 864000000
+  secret: native user_token_ecommerce user_token_ecommerceuser_token_ecommerceuser_token_ecommerce user_token_ecommerce user_token_ecommerce user_token_ecommerce user_token_ecommerce user_token_ecommerce user_token_ecommerce user_token_ecommerce user_token_ecommerce
+
+gateway:
+  ip: 192.168.2.19
