@@ -7,4 +7,5 @@ spring:
     config:
       server:
         git:
-          uri: C:\Users\DIR-N-0153\Desktop\OJT\msa\git-local-repo
+#          uri: C:\Users\DIR-N-0153\Desktop\OJT\msa\git-local-repo
+          uri: https://github.com/yn15/spring-cloud-repo.git
