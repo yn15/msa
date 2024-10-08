@@ -93,8 +93,8 @@ spring:
                 preLogger: true
                 postLogger: true
 
-token:
-  secret: user_tokenuser_tokenuser_tokenuser_tokenuser_tokenuser_tokenuser_tokenuser_token
+#token:
+#  secret: user_tokenuser_tokenuser_tokenuser_tokenuser_tokenuser_tokenuser_tokenuser_token
 management:
   endpoints:
     web:
