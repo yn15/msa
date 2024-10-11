@@ -3,6 +3,7 @@ package com.example.orderservice.controller;
 import com.example.orderservice.dto.OrderDto;
 import com.example.orderservice.jpa.OrderEntity;
 import com.example.orderservice.messagequeue.KafkaProducer;
+import com.example.orderservice.messagequeue.OrderProducer;
 import com.example.orderservice.service.OrderService;
 import com.example.orderservice.vo.RequestOrder;
 import com.example.orderservice.vo.ResponseOrder;
@@ -25,11 +26,13 @@ public class OrderController {
 
     OrderService orderService;
     KafkaProducer kafkaProducer;
+    OrderProducer orderProducer;
 
     @Autowired
-    public OrderController(Environment env, KafkaProducer kafkaProducer, OrderService orderService) {
+    public OrderController(Environment env, KafkaProducer kafkaProducer, OrderProducer orderProducer, OrderService orderService) {
         this.env = env;
         this.kafkaProducer = kafkaProducer;
+        this.orderProducer = orderProducer;
         this.orderService = orderService;
     }
 
@@ -57,6 +60,8 @@ public class OrderController {
         orderDto.setTotalPrice(orderDetails.getQty() * orderDetails.getUnitPrice());
 
         kafkaProducer.send("example-catalog-topic", orderDto);
+        orderProducer.send("orders", orderDto);
+
 
         ResponseOrder responseOrder = mapper.map(orderDto, ResponseOrder.class);
 
